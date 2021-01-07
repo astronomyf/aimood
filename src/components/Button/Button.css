@@ -27,7 +27,6 @@
 
 .button:disabled {
   transition: ease-out 0.2s;
-  opacity: 0.6;
-  background-color: #dadada;
-  color: #878787;
+  background-color: #dfdfdf;
+  color: #a5a5a5;
 }

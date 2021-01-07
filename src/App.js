@@ -1,4 +1,6 @@
 import { Component } from "react";
+import ConfettiGenerator from "confetti-js";
+
 import "./App.css";
 
 import Header from "./components/Header/Header";
@@ -10,15 +12,25 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
       expression: "",
-      selectedGenres: [],
+      selectedGenres: null,
       tracks: null,
     };
 
     this.getExpression = this.getExpression.bind(this);
     this.getGenres = this.getGenres.bind(this);
     this.getTracks = this.getTracks.bind(this);
+  }
+
+  componentDidMount() {
+    const confettiSettings = {
+      target: "confetti-background",
+      animate: false,
+      props: ["circle"],
+      respawn: false,
+    };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
   }
 
   getExpression(data) {
@@ -37,24 +49,27 @@ class App extends Component {
     const { selectedGenres, tracks } = this.state;
     return (
       <>
-        <Header />
-        <main className="main">
-          {tracks === null ? (
-            <GenresContainer onSelectedGenres={this.getGenres} />
-          ) : (
-            ""
-          )}
-          {selectedGenres.length > 0 && tracks === null ? (
-            <WebcamDetection
-              selectedGenres={selectedGenres}
-              getTracks={this.getTracks}
-              getExpressionCallback={this.getExpression}
-            />
-          ) : (
-            ""
-          )}
-        </main>
-        <Footer />
+        <canvas id="confetti-background" />
+        <div class="container">
+          <Header />
+          <main className="main">
+            {tracks === null ? (
+              <GenresContainer onSelectedGenres={this.getGenres} />
+            ) : (
+              ""
+            )}
+            {selectedGenres !== null && tracks === null ? (
+              <WebcamDetection
+                selectedGenres={selectedGenres}
+                getTracks={this.getTracks}
+                getExpressionCallback={this.getExpression}
+              />
+            ) : (
+              ""
+            )}
+          </main>
+          <Footer />
+        </div>
       </>
     );
   }
