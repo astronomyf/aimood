@@ -1,25 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import WebcamDetection from "./components/WebcamDetection/WebcamDetection";
+import GenresContainer from "./components/GenresContainer/GenresContainer";
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: false,
+      expression: "",
+      selectedGenres: [],
+      tracks: null,
+    };
+
+    this.getExpression = this.getExpression.bind(this);
+    this.getGenres = this.getGenres.bind(this);
+    this.getTracks = this.getTracks.bind(this);
+  }
+
+  getExpression(data) {
+    this.setState({ expression: data });
+  }
+
+  getGenres(data) {
+    this.setState({ selectedGenres: data });
+  }
+
+  getTracks(data) {
+    this.setState({ tracks: data });
+  }
+
+  render() {
+    const { selectedGenres, tracks } = this.state;
+    return (
+      <>
+        <Header />
+        <main className="main">
+          {tracks === null ? (
+            <GenresContainer onSelectedGenres={this.getGenres} />
+          ) : (
+            ""
+          )}
+          {selectedGenres.length > 0 && tracks === null ? (
+            <WebcamDetection
+              selectedGenres={selectedGenres}
+              getTracks={this.getTracks}
+              getExpressionCallback={this.getExpression}
+            />
+          ) : (
+            ""
+          )}
+        </main>
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

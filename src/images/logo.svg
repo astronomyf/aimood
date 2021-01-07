@@ -1,0 +1,18 @@
+<svg id="mood" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="107.965" height="107.965" viewBox="0 0 107.965 107.965">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.178" y1="0.147" x2="0.815" y2="0.892" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#c854e3"/>
+      <stop offset="1" stop-color="#ed56ab"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0" y1="0" x2="1" y2="1" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3246f6"/>
+      <stop offset="1" stop-color="#814bf6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0.1" x2="0.796" y2="0.886" xlink:href="#linear-gradient-3"/>
+  </defs>
+  <path id="Tracciato_1" data-name="Tracciato 1" d="M13.958,13.958a47.657,47.657,0,0,0,33.7,81.355H50.82V0H47.657a47.346,47.346,0,0,0-33.7,13.958Zm-7.632,33.7A41.386,41.386,0,0,1,44.494,6.446V44.494H12.652v3.163a35.051,35.051,0,0,0,31.841,34.86v6.351A41.386,41.386,0,0,1,6.326,47.657ZM25.115,65.366A28.538,28.538,0,0,1,19.151,50.82H44.494v6.468A34.615,34.615,0,0,0,25.115,65.366Zm19.378-1.721V76.16a28.55,28.55,0,0,1-14.926-6.266A28.344,28.344,0,0,1,44.494,63.645Z" fill="url(#linear-gradient)"/>
+  <path id="Tracciato_2" data-name="Tracciato 2" d="M91,151h18.978v6.326H91Z" transform="translate(-71.811 -119.159)" fill="url(#linear-gradient-2)"/>
+  <path id="Tracciato_3" data-name="Tracciato 3" d="M340.489,160A9.5,9.5,0,0,0,331,169.489v9.489a9.489,9.489,0,1,0,18.978,0v-9.489A9.5,9.5,0,0,0,340.489,160Zm3.163,18.978a3.163,3.163,0,0,1-6.326,0v-9.489a3.163,3.163,0,0,1,6.326,0Z" transform="translate(-261.202 -126.261)" fill="url(#linear-gradient-3)"/>
+  <path id="Tracciato_4" data-name="Tracciato 4" d="M307.862,73.958A47.346,47.346,0,0,0,274.163,60H271v95.313h3.163a47.657,47.657,0,0,0,33.7-81.355Zm-30.535,74.909V122.207h15.815V115.88H277.326V66.446a41.332,41.332,0,0,1,0,82.421Z" transform="translate(-213.854 -47.348)" fill="url(#linear-gradient-4)"/>
+</svg>
