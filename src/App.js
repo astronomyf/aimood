@@ -7,7 +7,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import WebcamDetection from "./components/WebcamDetection/WebcamDetection";
 import GenresContainer from "./components/GenresContainer/GenresContainer";
-
+import AlbumsContainer from "./components/AlbumsContainer/AlbumsContainer";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -43,6 +43,7 @@ class App extends Component {
 
   getTracks(data) {
     this.setState({ tracks: data });
+    console.log(data);
   }
 
   render() {
@@ -50,13 +51,13 @@ class App extends Component {
     return (
       <>
         <canvas id="confetti-background" />
-        <div class="container">
+        <div className="container">
           <Header />
           <main className="main">
             {tracks === null ? (
               <GenresContainer onSelectedGenres={this.getGenres} />
             ) : (
-              ""
+              <AlbumsContainer tracks={tracks} />
             )}
             {selectedGenres !== null && tracks === null ? (
               <WebcamDetection

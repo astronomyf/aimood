@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ChipLoader from "../ChipLoader/ChipLoader";
 
 import {
   getAvailableGenres,
@@ -48,15 +49,16 @@ const GenresContainer = ({ onSelectedGenres }) => {
     <>
       {next ? "" : <h1>Choose up to 5 genres</h1>}
       <div className="chips-container">
-        {next ? <h3>Selected genres:</h3> : ""}
-        {genres.map((genre, index) => (
-          <Chip
-            key={index}
-            title={genre}
-            disabled={selectedGenres.length === 5 || next ? true : false}
-            onChange={addOrRemoveGenre}
+        {genres.length === 0 ? (
+          <ChipLoader />
+        ) : (
+          <ChipContainer
+            next={next}
+            genres={genres}
+            selectedGenres={selectedGenres}
+            addOrRemoveGenre={addOrRemoveGenre}
           />
-        ))}
+        )}
       </div>
       {next ? (
         ""
@@ -69,6 +71,22 @@ const GenresContainer = ({ onSelectedGenres }) => {
           />
         </div>
       )}
+    </>
+  );
+};
+
+const ChipContainer = ({ next, genres, selectedGenres, addOrRemoveGenre }) => {
+  return (
+    <>
+      {next ? <h3>Selected genres:</h3> : ""}
+      {genres.map((genre, index) => (
+        <Chip
+          key={index}
+          title={genre}
+          disabled={selectedGenres.length === 5 || next ? true : false}
+          onChange={addOrRemoveGenre}
+        />
+      ))}
     </>
   );
 };

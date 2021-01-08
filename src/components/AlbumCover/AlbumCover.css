@@ -1,0 +1,68 @@
+.album--container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 200px;
+  height: auto;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin: 20px 20px 0px 0px;
+}
+
+.album--container h4 {
+  width: 100%;
+  margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.album--cover {
+  width: 100%;
+  height: auto;
+}
+
+.album--description {
+  flex-direction: column;
+  font-size: 14px;
+  color: #bababa;
+  margin-top: 20px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.album--description strong {
+  font-size: 16px;
+  color: #181818;
+}
+
+.spotify--button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #1c1c1c;
+  color: whitesmoke;
+  transition: opacity 0.2s ease-in;
+}
+
+.spotify--button:hover {
+  opacity: 0.9;
+}
+
+.spotify--logo {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
